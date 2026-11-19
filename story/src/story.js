@@ -229,8 +229,8 @@ start(() => {
   // ═════════ MAKING IT RIGHT
   shot({ line: 'So I told him the truth.', set: front, cam: frame(1, 3.5, { size: 'wide', side: -6 }),
     act(lt, c) { hug(Fr.benny, c.t, 1.2); Fr.benny.setFace('worried'); Fr.wind.at(c.t, -3, 1, 1); const k = Math.min(1, lt / (c.d * 0.85)); put(Fr.me, lerp(9, 3.6, k), 4.2, -Math.PI / 2 * (k < 1 ? 1 : 0.5), M[5]).setFace('serious'); if (k < 1) Fr.me.walk(c.t); } });
-  shot({ line: 'Your drawing looks like a potato.', set: front, cam: frame(3.6, 4.2, { size: 'medium', side: 30, dist: 1.5 }),
-    act(lt, c) { put(Fr.me, 3.6, 4.2, -0.9, M[5]).pose('open', 0.6).setFace('say').talk(c.t); } });
+  shot({ line: 'Your drawing looks like a potato.', set: front, cam: frame(3.6, 4.2, { size: 'medium', side: 12, dist: 1.7 }),
+    act(lt, c) { put(Fr.me, 3.6, 4.2, -0.5, M[5]).pose({ aL: [30, 20], aR: [55, 10] }).setFace('say').talk(c.t); } });
   shot({ line: 'I lost twenty pounds instantly.', set: front, sfx: [['sparkle', 'lost'], ['fall', 'lost']], cam: frame(3.6, 4.2, { size: 'full', side: -8, dist: 1.4 }),
     act(lt, c) { put(Fr.me, 3.6, 4.2, -0.4, M[5]).setFace('neutral').idle(c.t); gain(Fr.me, Fr.sp, lt, c.w('lost'), M[5], M[4]); hug(Fr.benny, c.t, 1.2); Fr.benny.setFace(after(lt, c, 'lost') ? 'wow' : 'worried'); Fr.wind.at(c.t, -3, 1, 1); } });
   shot({ line: "Benny said, it's fine, I'm not mad.", set: front, cam: (() => { const h = head(0.45); return { pos: [h[0] + 2.2, h[1] - 0.6, h[2] + 4.8], look: [h[0], h[1] - 0.4, h[2]], fov: 60, blur: 0.7 }; })(),
